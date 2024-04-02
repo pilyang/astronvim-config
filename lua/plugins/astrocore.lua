@@ -52,6 +52,12 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
+        -- ai support - currently copilot
+        ["<leader><leader>"] = { name = " AI Support" },
+        ["<leader><leader>c"] = { name = "commit messages" },
+        ["<leader><leader>f"] = { name = "fix" },
+        ["<leader><leader>p"] = { name = "telescope integration" },
+
         -- navigate buffer tabs with `H` and `L`
         -- L = {
         --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
@@ -76,6 +82,13 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      },
+      v = {
+        -- ai support - currently copilot
+        ["<leader><leader>"] = { name = " AI Support" },
+        ["<leader><leader>c"] = { name = "commit messages" },
+        ["<leader><leader>f"] = { name = "fix" },
+        ["<leader><leader>p"] = { name = "telescope integration" },
       },
       t = {
         -- setting a mapping to false will disable it
