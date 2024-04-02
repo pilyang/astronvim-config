@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -32,6 +30,8 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        tabstop = 4,
+        shiftwidth = 4,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -43,6 +43,12 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      i = {
+        ["<C-o>"] = { "<ESC>o", desc = "insert new line below" },
+        ["<C-S-o>"] = { "<ESC>O", desc = "insert new line above" },
+        ["<C-i>"] = { "<ESC>I", desc = "move cursor to end of line" },
+        ["<C-a>"] = { "<ESC>A", desc = "move cursor to start of line" },
+      },
       n = {
         -- second key is the lefthand side of the map
 
