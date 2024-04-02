@@ -16,4 +16,46 @@ return {
       transparent_background = true,
     },
   },
+
+  -- golang pack
+  { import = "astrocommunity.pack.go" },
+
+  -- dap virtual text
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+
+  -- Plugins for markdown
+  { import = "astrocommunity.pack.markdown" },
+  
+  -- setup for noice and notify util
+  { import = "astrocommunity.utility.noice-nvim" },
+  {
+    "folke/noice.nvim",
+    opts = {
+      cmdline = {
+        format = {
+          cmdline = {
+            icon = ">_",
+          },
+        },
+      },
+      presets = {
+        bottom_search = false,
+        lsp_doc_border = true,
+      },
+      lsp = {
+        signature = {
+          enabled = true,
+          auto_open = {
+            enabled = false,
+          },
+        },
+      },
+    },
+  },
+  {
+    "catppuccin/nvim",
+    optional = true,
+    --@type: CatppuccinOptions
+    opts = { integrations = { noice = true } },
+  },
 }
