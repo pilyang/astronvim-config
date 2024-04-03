@@ -64,15 +64,22 @@ return {
           mapping = "<leader><leader>fd",
         },
         Commit = {
-          mapping = "<leader><leader>cc",
+          mapping = "<leader><leader>gc",
         },
         CommitStaged = {
-          mapping = "<leader><leader>cs",
+          mapping = "<leader><leader>gs",
         },
       },
     },
 
     keys = {
+      -- toggleChat
+      {
+        "<leader><leader>c",
+        function() require("CopilotChat").toggle() end,
+        desc = "CopilotChat - Toggle chat",
+      },
+
       -- Quick chat with Copilot
       -- mapping for <leader><leader>q
       quickChat("n", "buffer"),

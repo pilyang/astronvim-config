@@ -54,7 +54,7 @@ return {
 
         -- ai support - currently copilot
         ["<leader><leader>"] = { name = " AI Support" },
-        ["<leader><leader>c"] = { name = "commit messages" },
+        ["<leader><leader>g"] = { name = "git commit messages" },
         ["<leader><leader>f"] = { name = "fix" },
         ["<leader><leader>p"] = { name = "telescope integration" },
 
@@ -86,7 +86,7 @@ return {
       v = {
         -- ai support - currently copilot
         ["<leader><leader>"] = { name = " AI Support" },
-        ["<leader><leader>c"] = { name = "commit messages" },
+        ["<leader><leader>g"] = { name = "git commit messages" },
         ["<leader><leader>f"] = { name = "fix" },
         ["<leader><leader>p"] = { name = "telescope integration" },
       },
