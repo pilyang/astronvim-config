@@ -25,7 +25,7 @@ return {
 
   -- Plugins for markdown
   { import = "astrocommunity.pack.markdown" },
-  
+
   -- setup for noice and notify util
   { import = "astrocommunity.utility.noice-nvim" },
   {
@@ -58,4 +58,11 @@ return {
     --@type: CatppuccinOptions
     opts = { integrations = { noice = true } },
   },
+
+  -- setup for FE (html-css, vue)
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.vue" },
+
+  { import = "astrocommunity.programming-language-support.web-tools-nvim" },
 }
