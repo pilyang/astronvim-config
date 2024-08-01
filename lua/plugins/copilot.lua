@@ -14,6 +14,28 @@ local function quickChat(mode, selection)
 end
 
 return {
+  -- mapping hints for astrocore
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      mappings = {
+        n = {
+          ["<leader><leader>"] = { name = " AI Support" },
+          ["<leader><leader>g"] = { name = "git commit messages" },
+          ["<leader><leader>f"] = { name = "fix" },
+          ["<leader><leader>p"] = { name = "telescope integration" },
+        },
+        v = {
+          ["<leader><leader>"] = { name = " AI Support" },
+          ["<leader><leader>g"] = { name = "git commit messages" },
+          ["<leader><leader>f"] = { name = "fix" },
+          ["<leader><leader>p"] = { name = "telescope integration" },
+        },
+      },
+    },
+  },
+
   -- copilot setup
   {
     "zbirenbaum/copilot.lua",
