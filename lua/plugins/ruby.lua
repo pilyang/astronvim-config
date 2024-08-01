@@ -8,6 +8,7 @@
 -- 3. add ror.nvim (ruby on rails plugin for nvim)
 
 return {
+
   -- add treesitter for ruby
   {
     "nvim-treesitter/nvim-treesitter",
@@ -60,5 +61,36 @@ return {
     "mfussenegger/nvim-dap",
     optional = true,
     dependencies = { "suketa/nvim-dap-ruby", config = true },
+  },
+
+  -- ruby on rails setup
+  {
+    -- add mapping hints
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      mappings = {
+        n = {
+          ["<leader>r"] = { name = " Ruby" },
+          ["<leader>rr"] = { name = "󰫏 RoR commands" },
+        },
+        v = {
+          ["<leader>r"] = { name = " Ruby" },
+          ["<leader>rr"] = { name = "󰫏 RoR commands" },
+        },
+      },
+    },
+  },
+  {
+    "weizheheng/ror.nvim",
+    ft = "ruby",
+    keys = {
+      {
+        "<leader>rr",
+        function() require("ror.commands").list_commands {} end,
+        mode = { "n", "v" },
+        desc = "RoR commands",
+      },
+    },
   },
 }
