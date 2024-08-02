@@ -72,11 +72,9 @@ return {
       mappings = {
         n = {
           ["<leader>r"] = { name = " Ruby" },
-          ["<leader>rr"] = { name = "󰫏 RoR commands" },
         },
         v = {
           ["<leader>r"] = { name = " Ruby" },
-          ["<leader>rr"] = { name = "󰫏 RoR commands" },
         },
       },
     },
@@ -89,7 +87,7 @@ return {
         "<leader>rr",
         function() require("ror.commands").list_commands {} end,
         mode = { "n", "v" },
-        desc = "RoR commands",
+        desc = "󰫏 RoR commands",
       },
     },
   },
