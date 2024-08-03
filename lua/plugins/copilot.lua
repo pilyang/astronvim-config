@@ -106,25 +106,6 @@ return {
       -- mapping for <leader><leader>q
       quickChat("n", "buffer"),
       quickChat("v", "visual"),
-
-      -- Show help actions with telescope
-      {
-        "<leader><leader>ph",
-        function()
-          local actions = require "CopilotChat.actions"
-          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-        end,
-        desc = "CopilotChat - Help actions",
-      },
-      -- Show prompts actions with telescope
-      {
-        "<leader><leader>pp",
-        function()
-          local actions = require "CopilotChat.actions"
-          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-        end,
-        desc = "CopilotChat - Prompt actions",
-      },
     },
   },
 }
