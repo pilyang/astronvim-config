@@ -4,6 +4,7 @@
 -- 1. setup for test tool
 -- 2. make sure to if the dap is working well
 -- 3. setup lsp for rails -> done by using ruby-lsp -> continuous check required
+-- 4. configure with solargraph and ruby-lsp... -> solargraph works well with ruby and standard methods but ruby-lsp is more modern support rails
 
 return {
   {
@@ -13,17 +14,31 @@ return {
     opts = {
       ---@diagnostic disable-next-line: missing-fields
       config = {
-        ruby_lsp = {
-          filetype = { "ruby", "eruby" },
+        -- solargraph: old lsp,,,?
+        -- easy to setup => introduce all possilbe fields
+        -- has not that many configurations...
+        -- hard to use with rails
+        solargraph = {
           settings = {
-            ruby = {
-              -- disable default formatter and linter from rubocop which is default for ruby-lsp
-              format = {
-                enable = false,
-              },
-              lint = {
-                enable = false,
-              },
+            solargraph = {
+              autoformat = false,
+              formatting = false,
+              rename = false, -- enable from ruby_lsp
+              diagnostics = false, -- to disable rubocop from solargraph
+            },
+          },
+        },
+        -- ruby_lsp: new lsp
+        -- hard to setup => hard to find the way to configure....
+        -- ruby-lsp-rails is defualt add on
+        ruby_lsp = {
+          -- filetype = { "ruby", "eruby" },
+          settings = {
+            -- use rubocop as seperate formatter
+            -- disable from ruby-lsp
+            -- not sure if this is correct...
+            rubocop = {
+              enable = false,
             },
           },
         },
@@ -49,12 +64,15 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(
         opts.ensure_installed,
-        -- -- use solargraph
-        -- { "solargraph", "standardrb", "erb-formatter", "erb-lint" }
-        -- use ruby-lsp
         -- ruby-lsp automatically include ruby lsp rails from v0.3.0 (https://github.com/Shopify/ruby-lsp-rails?tab=readme-ov-file)
         -- ruby-lsp use rubocop for linting and formatting, but can use standardrb as addon
-        { "ruby_lsp", "rubocop", "erb-formatter", "erb-lint" }
+        {
+          "ruby_lsp",
+          "solargraph",
+          "rubocop",
+          "erb-formatter",
+          "erb-lint",
+        }
       )
     end,
   },
@@ -62,22 +80,24 @@ return {
     "williamboman/mason-lspconfig.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        -- { "solargraph", "standardrb" }
-        { "ruby_lsp", "rubocop" }
-      )
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+        "ruby_lsp",
+        "solargraph",
+        "rubocop",
+      })
     end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        -- { "solargraph", "standardrb", "erb-formatter", "erb-lint" }
-        { "ruby_lsp", "rubocop", "erb-formatter", "erb-lint" }
-      )
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+        "ruby_lsp",
+        "solargraph",
+        "rubocop",
+        "erb-formatter",
+        "erb-lint",
+      })
     end,
   },
   -- formatter setup
@@ -87,7 +107,7 @@ return {
     opts = {
       formatters_by_ft = {
         ruby = { "rubocop" },
-        eruby = { "erb_format" },
+        eruby = { "erb-formatter" },
       },
     },
   },
