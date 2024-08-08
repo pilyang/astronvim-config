@@ -64,8 +64,6 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
 
-  { import = "astrocommunity.programming-language-support.web-tools-nvim" },
-
   -- docker
   { import = "astrocommunity.pack.docker" },
 }
