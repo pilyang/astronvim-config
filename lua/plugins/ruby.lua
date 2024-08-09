@@ -25,6 +25,7 @@ return {
               formatting = false,
               rename = false, -- enable from ruby_lsp
               diagnostics = false, -- to disable rubocop from solargraph
+              hover = false, -- enable from ruby_lsp
             },
           },
         },
