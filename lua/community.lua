@@ -17,8 +17,8 @@ return {
     },
   },
 
-  -- golang pack
-  { import = "astrocommunity.pack.go" },
+  -- -- golang pack
+  -- { import = "astrocommunity.pack.go" },
 
   -- dap virtual text
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
