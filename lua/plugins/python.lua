@@ -19,6 +19,7 @@ return {
                 autoImportCompletions = true,
                 diagnosticSeverityOverrides = {
                   reportAttributeAccessIssue = "warning",
+                  reportReturnType = "warning",
                   reportUnusedImport = "information",
                   reportUnusedFunction = "information",
                   reportUnusedVariable = "information",
