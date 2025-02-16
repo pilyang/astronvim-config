@@ -20,6 +20,11 @@ return {
   -- golang pack
   { import = "astrocommunity.pack.go" },
 
+  -- python pack
+  -- NOTE: disable python pack to configure the isort disable.
+  -- just copy the pack.python and configure to disable the isrot
+  -- { import = "astrocommunity.pack.python" },
+
   -- dap virtual text
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
 
