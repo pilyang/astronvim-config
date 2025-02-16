@@ -31,6 +31,9 @@ return {
   -- Plugins for markdown
   { import = "astrocommunity.pack.markdown" },
 
+  -- Test
+  { import = "astrocommunity.test.neotest" },
+
   -- setup for noice and notify util
   { import = "astrocommunity.utility.noice-nvim" },
   {
