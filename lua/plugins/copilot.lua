@@ -44,7 +44,10 @@ return {
     opts = {
       suggestion = {
         auto_trigger = true,
-        debounce = 200,
+        debounce = 100,
+        keymap = {
+          accept = "<C-c>",
+        },
       },
     },
   },
