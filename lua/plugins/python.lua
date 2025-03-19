@@ -57,7 +57,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "black" }) -- NOTE: isort disabled
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "black", "isort" }) -- NOTE: isort disabled
     end,
   },
   {
@@ -74,7 +74,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "basedpyright", "black", "debugpy" }) -- NOTE: isort disabled
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "basedpyright", "black", "debugpy", "isort" }) -- NOTE: isort disabled
     end,
   },
   {
@@ -135,7 +135,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        python = { "black" }, -- NOTE: isort disabled-- NOTE: isort disabled-- NOTE: isort disabled
+        python = { "black", "isort" }, -- NOTE: isort disabled-- NOTE: isort disabled-- NOTE: isort disabled
       },
     },
   },
