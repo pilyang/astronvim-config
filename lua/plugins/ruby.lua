@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then rerurn {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Setup for Ruby language
 --
