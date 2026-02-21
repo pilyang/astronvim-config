@@ -74,4 +74,20 @@ return {
 
   -- docker
   { import = "astrocommunity.pack.docker" },
+
+  -- Example lazy.nvim spec snippet for neotest and the minitest adapter
+  {
+    "nvim-neotest/neotest",
+    lazy = true,
+    dependencies = {
+      "zidhuss/neotest-minitest", -- Add the minitest adapter
+      -- other adapters (e.g., "olimorris/neotest-rspec") can also be listed here
+    },
+    opts = {
+      adapters = {
+        ["neotest-minitest"] = {},
+      },
+      -- other neotest options
+    },
+  },
 }
