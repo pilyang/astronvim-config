@@ -20,17 +20,17 @@ return {
         -- easy to setup => introduce all possilbe fields
         -- has not that many configurations...
         -- hard to use with rails
-        solargraph = {
-          settings = {
-            solargraph = {
-              autoformat = false,
-              formatting = false,
-              rename = false, -- enable from ruby_lsp
-              diagnostics = false, -- to disable rubocop from solargraph
-              hover = false, -- enable from ruby_lsp
-            },
-          },
-        },
+        -- solargraph = {
+        --   settings = {
+        --     solargraph = {
+        --       autoformat = false,
+        --       formatting = false,
+        --       rename = false, -- enable from ruby_lsp
+        --       diagnostics = false, -- to disable rubocop from solargraph
+        --       hover = false, -- enable from ruby_lsp
+        --     },
+        --   },
+        -- },
         -- ruby_lsp: new lsp
         -- hard to setup => hard to find the way to configure....
         -- ruby-lsp-rails is defualt add on
@@ -71,7 +71,7 @@ return {
         -- ruby-lsp use rubocop for linting and formatting, but can use standardrb as addon
         {
           "ruby_lsp",
-          "solargraph",
+          -- "solargraph",
           "rubocop",
           "erb-formatter",
           "erb-lint",
@@ -85,7 +85,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "ruby_lsp",
-        "solargraph",
+        -- "solargraph",
         "rubocop",
       })
     end,
@@ -96,7 +96,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "ruby_lsp",
-        "solargraph",
+        -- "solargraph",
         "rubocop",
         "erb-formatter",
         "erb-lint",
