@@ -32,6 +32,7 @@ return {
         wrap = false, -- sets vim.opt.wrap
         tabstop = 4,
         shiftwidth = 4,
+        clipboard = "unnamedplus", -- sync nvim yank/paste with the system clipboard
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
