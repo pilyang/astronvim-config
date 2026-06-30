@@ -1,0 +1,28 @@
+lua/plugins/astrolsp.lua
+  s_1dd807ac165ec1::t_ccb8926ef2fa36 44,48-56
+lua/plugins/ruby.lua
+  s_1dd807ac165ec1::t_970c05588bdc0d 86
+  s_1dd807ac165ec1::t_b2a86515590c8a 53-54,56,58-63
+lua/lazy_setup.lua
+  s_1dd807ac165ec1::t_812a66eee335a8 4
+lua/plugins/treesitter.lua
+  s_1dd807ac165ec1::t_3f4ac57fa48759 4-8,12-22
+lua/plugins/mason.lua
+  s_1dd807ac165ec1::t_2d8cd588ceb1fd 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "38f9e9f492b0f865c12f46a42828c771cdc1e158",
+  "prompts": {},
+  "sessions": {
+    "s_1dd807ac165ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11bd6439-5bbc-4d6b-a4f4-2964567a950b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "pilyang <pilyang.dev@gmail.com>"
+    }
+  }
+}
