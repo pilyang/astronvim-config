@@ -1,0 +1,19 @@
+lua/plugins/ruby.lua
+  s_1dd807ac165ec1::t_dad960eccccca4 100-101,103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "336ff95f3dad0ad3ab57b4dc6d1a8c5206eda128",
+  "prompts": {},
+  "sessions": {
+    "s_1dd807ac165ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11bd6439-5bbc-4d6b-a4f4-2964567a950b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "pilyang <pilyang.dev@gmail.com>"
+    }
+  }
+}
