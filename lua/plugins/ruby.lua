@@ -50,14 +50,17 @@ return {
   },
 
   -- add treesitter for ruby
+  -- AstroNvim v6: parsers are declared via AstroCore's `treesitter` module
+  -- (nvim-treesitter moved to its `main` branch).
   {
-    "nvim-treesitter/nvim-treesitter",
+    "AstroNvim/astrocore",
     optional = true,
-    opts = function(_, opts)
-      if opts.ensure_installed ~= "all" then
-        opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "ruby" })
-      end
-    end,
+    ---@type AstroCoreOpts
+    opts = {
+      treesitter = {
+        ensure_installed = { "ruby" },
+      },
+    },
   },
 
   -- add lsp, linter and formatter for ruby
@@ -80,7 +83,7 @@ return {
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {

@@ -41,10 +41,19 @@ return {
     servers = {
       -- "pyright"
     },
-    -- customize language server configuration options passed to `lspconfig`
+    -- customize language server configuration options passed to `vim.lsp.config`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      -- AstroNvim v6 removed neoconf; this used to live in `.neoconf.json`.
+      -- Disable lua_ls formatting so StyLua (via mason) owns Lua formatting.
+      lua_ls = {
+        settings = {
+          Lua = {
+            format = { enable = false },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
