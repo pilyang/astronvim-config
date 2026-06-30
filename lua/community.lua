@@ -18,7 +18,7 @@ return {
   },
 
   -- golang pack
-  -- { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.go" },
 
   -- python pack
   -- NOTE: disable python pack to configure the isort disable.
