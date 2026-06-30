@@ -10,7 +10,14 @@ return {
           before_init = function(_, c)
             if not c.settings then c.settings = {} end
             if not c.settings.python then c.settings.python = {} end
-            c.settings.python.pythonPath = vim.fn.exepath "python"
+            -- `python` does not exist on this machine (only `python3`), so
+            -- exepath("python") returns "" and basedpyright gets no interpreter.
+            -- Fall back to python3 / VIRTUAL_ENV so analysis actually resolves imports.
+            local py = vim.fn.exepath "python"
+            if py == "" then py = vim.fn.exepath "python3" end
+            local venv = vim.env.VIRTUAL_ENV
+            if venv and venv ~= "" then py = venv .. "/bin/python" end
+            c.settings.python.pythonPath = py
           end,
           settings = {
             basedpyright = {
@@ -38,16 +45,19 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
+    -- AstroNvim v6: treesitter parsers are declared via AstroCore's `treesitter`
+    -- module (nvim-treesitter moved to its `main` branch).
+    "AstroNvim/astrocore",
     optional = true,
-    opts = function(_, opts)
-      if opts.ensure_installed ~= "all" then
-        opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "python", "toml" })
-      end
-    end,
+    ---@type AstroCoreOpts
+    opts = {
+      treesitter = {
+        ensure_installed = { "python", "toml" },
+      },
+    },
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "basedpyright" })
