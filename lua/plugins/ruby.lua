@@ -97,8 +97,10 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
     opts = function(_, opts)
+      -- mason-tool-installer installs by mason PACKAGE name: it's `ruby-lsp`
+      -- (hyphen); `ruby_lsp` is the lspconfig server name used above.
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "ruby_lsp",
+        "ruby-lsp",
         -- "solargraph",
         "rubocop",
         "erb-formatter",
