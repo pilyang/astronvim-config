@@ -36,21 +36,21 @@ return {
     },
   },
 
-  -- copilot setup
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "User AstroFile",
-    opts = {
-      suggestion = {
-        auto_trigger = true,
-        debounce = 100,
-        keymap = {
-          accept = "<C-c>",
-        },
-      },
-    },
-  },
+  -- -- copilot setup
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "User AstroFile",
+  --   opts = {
+  --     suggestion = {
+  --       auto_trigger = true,
+  --       debounce = 100,
+  --       keymap = {
+  --         accept = "<C-c>",
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
