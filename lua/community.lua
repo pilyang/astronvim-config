@@ -20,6 +20,9 @@ return {
   -- golang pack
   { import = "astrocommunity.pack.go" },
 
+  -- swift pack
+  { import = "astrocommunity.pack.swift" },
+
   -- python pack
   -- NOTE: disable python pack to configure the isort disable.
   -- just copy the pack.python and configure to disable the isrot
