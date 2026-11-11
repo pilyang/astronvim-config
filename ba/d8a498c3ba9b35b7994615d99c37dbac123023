@@ -1,0 +1,14 @@
+lua/plugins/copilot.lua
+  h_06b42154d817ab 39-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bad8a498c3ba9b35b7994615d99c37dbac123023",
+  "prompts": {},
+  "humans": {
+    "h_06b42154d817ab": {
+      "author": "pilyang <pilyang.dev@gmail.com>"
+    }
+  }
+}
