@@ -1,0 +1,14 @@
+lua/plugins/astroui.lua
+  h_06b42154d817ab 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e8d7cf3195eb442069f94a3a536829b2891b063",
+  "prompts": {},
+  "humans": {
+    "h_06b42154d817ab": {
+      "author": "pilyang <pilyang.dev@gmail.com>"
+    }
+  }
+}
