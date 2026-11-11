@@ -1,0 +1,14 @@
+lua/community.lua
+  h_06b42154d817ab 23-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3f54533f1b8cbab874c553e444bd3a55671c2806",
+  "prompts": {},
+  "humans": {
+    "h_06b42154d817ab": {
+      "author": "pilyang <pilyang.dev@gmail.com>"
+    }
+  }
+}
